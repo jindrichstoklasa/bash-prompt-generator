@@ -1,0 +1,123 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Bash Prompt Generator – Interactive PS1 Prompt Builder</title>
+
+    <meta name="description" content="Create a custom Bash PS1 prompt with an interactive prompt generator. Add colors, Git status, system info and preview your prompt instantly.">
+    <meta name="keywords" content="bash prompt generator, ps1 generator, linux prompt builder, bash ps1 tool">
+    <meta name="author" content="neiki">
+    <meta name="robots" content="index, follow">
+
+    <link rel="canonical" href="https://neiki.eu/bash-prompt-generator/">
+
+    <meta property="og:title" content="Bash Prompt Generator">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://neiki.eu/bash-prompt-generator/">
+    <meta property="og:description" content="Create custom PS1 prompts for Bash with an interactive generator.">
+    <meta property="og:image" content="https://neiki.eu/bash-prompt-generator/assets/screenshot.png">
+    <meta property="og:image:alt" content="Bash Prompt Generator preview">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/panels.css">
+    <link rel="stylesheet" href="css/responsive.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
+
+    <script type="application/ld+json">
+    {
+     "@context": "https://schema.org",
+     "@type": "SoftwareApplication",
+     "name": "Bash Prompt Generator",
+     "applicationCategory": "DeveloperApplication",
+     "operatingSystem": "Linux",
+     "url": "https://neiki.eu/bash-prompt-generator/",
+     "description": "Interactive Bash PS1 prompt generator for creating custom terminal prompts."
+    }
+    </script>
+
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Bash Prompt Generator</h1>
+            <h2>Create custom PS1 prompts with an interactive builder</h2>
+        </header>
+
+        <div class="main-layout">
+            <!-- Left Panel: Prompt Elements -->
+            <aside class="left-panel">
+                <button class="panel-toggle" onclick="togglePanel('left')">
+                    <i class="fas fa-chevron-down"></i> Prompt Elements
+                </button>
+                <h3>Prompt Elements</h3>
+                <div id="elementsPanel"></div>
+            </aside>
+
+            <!-- Middle: Canvas -->
+            <main class="canvas-section">
+                <div class="preview-inline">
+                    <h3>Preview</h3>
+                    <div class="preview" id="preview"></div>
+                </div>
+                <div class="canvas" id="canvas"></div>
+                <div class="special-chars-section">
+                    <div class="special-chars-title">Quick Characters</div>
+                    <div class="special-chars" id="specialChars"></div>
+                </div>
+                <div class="code-inline">
+                    <h3>Prompt Code</h3>
+                    <div class="code-output" id="codeOutput"></div>
+                    <div class="button-wrapper">
+                        <button class="copy-btn" id="copyBtn">
+                            <i class="fas fa-copy"></i> Copy to Clipboard
+                        </button>
+                        <button class="reset-btn" id="resetBtn">
+                            <i class="fas fa-redo"></i> Reset All
+                        </button>
+                        <button class="delete-btn" id="deleteBtn">
+                            <i class="fas fa-trash"></i> Delete All
+                        </button>
+                    </div>
+                </div>
+            </main>
+
+            <!-- Right Panel: Properties -->
+            <aside class="right-panel">
+                <button class="mobile-close-btn" type="button" onclick="closePropertiesDrawer()" aria-label="Close properties">
+                    <i class="fas fa-times"></i>
+                </button>
+                <button class="panel-toggle" onclick="togglePanel('right')">
+                    <i class="fas fa-chevron-down"></i> Element Properties
+                </button>
+                <h3>Element Properties</h3>
+                <div id="propertiesPanel"></div>
+            </aside>
+        </div>
+    </div>
+    <section class="about-bash">
+        <h2>What is a Bash Prompt?</h2>
+        <p>
+            The Bash prompt (PS1) is the command line interface indicator shown in Linux terminals.
+            With this generator you can visually build a custom PS1 prompt with colors,
+            Git information, system data and formatting.
+        </p>
+    </section>
+    <footer class="site-footer">
+        <span>&copy; 2026 neiki</span><span class="divider">|</span><span>neikiri@neikiri.cz</span>
+    </footer>
+
+    <script src="js/elements.js"></script>
+    <script src="js/state.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/logic.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
