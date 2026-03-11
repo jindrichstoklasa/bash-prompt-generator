@@ -244,7 +244,17 @@
                 let styledPreview = `<span style="${styles}">${previewValue}</span>`;
 
                 previewHtml += styledPreview;
+
+                const ansiPrefix = generateAnsiCode(elem);
+                if (ansiPrefix) {
+                    promptCode += escapePromptContent(`\\[${ansiPrefix}\\]`);
+                }
+
                 promptCode += escapePromptContent(elem.code);
+
+                if (ansiPrefix) {
+                    promptCode += escapePromptContent('\\[\\e[0m\\]');
+                }
             });
 
             if (elements.length > 0) {
@@ -262,5 +272,6 @@
             // Placeholder for color mode switching
             console.log(`Switching ${type} to ${mode} mode`);
         }
+
 
 

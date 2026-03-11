@@ -150,11 +150,17 @@
             Sortable.create(sortableList, {
                 animation: 150,
                 ghostClass: 'sortable-ghost',
-                onEnd: (evt) => {
-                    const newOrder = Array.from(sortableList.children).map(div => 
-                        elements.find(e => e.id === div.dataset.elemId)
-                    );
-                    elements = newOrder;
+                onEnd: () => {
+                    const newOrder = Array.from(sortableList.children)
+                        .map(div => elements.find(e => e.id === div.dataset.elemId))
+                        .filter(Boolean);
+
+                    if (newOrder.length === elements.length) {
+                        elements = newOrder;
+                    }
+
+                    // Force a full re-render so mobile canvas order visually matches preview/state.
+                    renderCanvas();
                     updatePreview();
                 }
             });
@@ -331,4 +337,5 @@
                 }
             }
         }
+
 
