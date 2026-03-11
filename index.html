@@ -5,7 +5,7 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Bash Prompt Generator – Interactive PS1 Prompt Builder</title>
+    <title>Bash Prompt Generator – Create Custom PS1 Prompts Online</title>
 
     <meta name="description" content="Create a custom Bash PS1 prompt with an interactive prompt generator. Add colors, Git status, system info and preview your prompt instantly.">
     <meta name="keywords" content="bash prompt generator, ps1 generator, linux prompt builder, bash ps1 tool">
@@ -30,6 +30,24 @@
     <link rel="stylesheet" href="css/responsive.css">
 
     <script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
+    <!-- Matomo -->
+    <script>
+      var _paq = window._paq = window._paq || [];
+      /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+      _paq.push(["setDocumentTitle", document.domain + "/" + document.title]);
+      _paq.push(["setCookieDomain", "*.neiki.eu"]);
+      _paq.push(['trackPageView']);
+      _paq.push(['enableLinkTracking']);
+      (function() {
+        var u="https://stats.neikiri.cz/";
+        _paq.push(['setTrackerUrl', u+'matomo.php']);
+        _paq.push(['setSiteId', '5']);
+        var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+        g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+      })();
+    </script>
+    <noscript><p><img referrerpolicy="no-referrer-when-downgrade" src="https://stats.neikiri.cz/matomo.php?idsite=5&amp;rec=1" style="border:0;" alt="" /></p></noscript>
+    <!-- End Matomo Code -->
 
     <script type="application/ld+json">
     {
@@ -103,14 +121,138 @@
         </div>
     </div>
     <section class="about-bash">
-        <h2>What is a Bash Prompt?</h2>
-        <p>
-            The Bash prompt (PS1) is the command line interface indicator shown in Linux terminals.
-            With this generator you can visually build a custom PS1 prompt with colors,
-            Git information, system data and formatting.
-        </p>
-    </section>
-    <footer class="site-footer">
+    <h2>What is a Bash Prompt?</h2>
+    <p>
+        A Bash prompt is the command line indicator displayed in Linux terminals.
+        It is controlled by the <code>PS1</code> variable and defines how the shell
+        prompt appears before each command. With this Bash Prompt Generator you
+        can visually create a custom PS1 prompt with colors, system information,
+        Git context and formatting.
+    </p>
+</section>
+
+<section id="intro" class="about-bash intro">
+    <h2>Bash Prompt Generator Overview</h2>
+    <p>
+        Bash Prompt Generator is a browser tool that helps you build Linux prompts
+        visually instead of writing PS1 syntax manually. You can assemble prompt
+        elements, rearrange their order, customize colors and formatting, and
+        instantly preview the final result. The generator supports practical
+        fields such as date, time, user, host, directory path, command status,
+        and Git information.
+    </p>
+
+    <p>
+        Once the layout is ready, the tool generates a valid PS1 string that can
+        be copied directly into your shell configuration. This makes prompt
+        customization easier for beginners and faster for advanced Linux users
+        who frequently experiment with different terminal layouts.
+    </p>
+</section>
+
+<section id="how-tool-works" class="about-bash how-tool-works">
+    <h2>How the Bash Prompt Generator Works</h2>
+
+    <p>
+        The tool follows a simple workflow: build the prompt, customize styling,
+        and export the final PS1 code.
+    </p>
+
+    <ol>
+        <li>Select prompt elements such as user, hostname, directory path, time,
+        command status, or Git branch.</li>
+
+        <li>Drag elements onto the canvas and reorder them to create the desired
+        prompt structure.</li>
+
+        <li>Edit element properties including color, background, bold text, and
+        separators.</li>
+
+        <li>Watch the preview update instantly as you adjust formatting.</li>
+
+        <li>Copy the generated <code>PS1</code> string from the Prompt Code panel
+        and paste it into your shell configuration.</li>
+    </ol>
+
+    <p>
+        The interface is designed for both desktop and mobile environments. On
+        smaller screens you can reorder prompt elements directly inside the
+        canvas while keeping the preview visible for quick adjustments.
+    </p>
+</section>
+
+<section id="examples" class="about-bash examples">
+    <h2>Bash Prompt Examples</h2>
+
+    <p>Here are several common PS1 prompt layouts used in Linux terminals.</p>
+
+    <pre><code>\u@\h \W $</code></pre>
+    <p>Minimal prompt showing user, host and current folder.</p>
+
+    <pre><code>\d{+%Y-%m-%d} \t \u \W $</code></pre>
+    <p>Adds date and time to track terminal sessions.</p>
+
+    <pre><code>\u on \h in \w $(git branch --show-current 2>/dev/null) $</code></pre>
+    <p>Displays the active Git branch when inside a repository.</p>
+
+    <pre><code>\n[\u|\h] \w \n$ </code></pre>
+    <p>Two-line prompt layout for better readability.</p>
+
+    <pre><code>\d{+$?} \u \W $</code></pre>
+    <p>Shows exit status of the last command for debugging.</p>
+
+</section>
+
+<section id="variables" class="about-bash variables">
+    <h2>Common Bash PS1 Variables</h2>
+
+    <ul>
+        <li><code>\u</code> - current username</li>
+        <li><code>\h</code> - short hostname</li>
+        <li><code>\H</code> - full hostname</li>
+        <li><code>\w</code> - full working directory</li>
+        <li><code>\W</code> - current folder name</li>
+        <li><code>\d</code> - current date</li>
+        <li><code>\t</code> - current time (24-hour format)</li>
+        <li><code>\!</code> - command history number</li>
+        <li><code>\#</code> - command count in the current session</li>
+        <li><code>$?</code> - exit status of the previous command</li>
+    </ul>
+
+    <p>
+        These variables allow a Bash prompt to display useful context about the
+        current session. By combining them with colors and formatting you can
+        create prompts that are easier to read and safer to use when working
+        across multiple servers or environments.
+    </p>
+</section>
+
+<section id="how-to-install" class="about-bash how-to-install">
+    <h2>How to Install the Generated Bash Prompt</h2>
+
+    <p>
+        After generating a prompt in the tool, click <strong>Copy to Clipboard</strong>
+        in the Prompt Code section. Then open your Bash configuration file:
+    </p>
+
+    <pre><code>nano ~/.bashrc</code></pre>
+
+    <p>Add the generated PS1 line to the file:</p>
+
+    <pre><code>PS1="your generated prompt"</code></pre>
+
+    <p>Reload the configuration to apply the changes:</p>
+
+    <pre><code>source ~/.bashrc</code></pre>
+
+    <p>
+        Open a new terminal window to verify that the prompt displays correctly.
+        If necessary, return to the generator, adjust the layout, and copy the
+        updated code again. Keeping a backup of the previous PS1 line allows easy
+        rollback if you want to restore the original prompt.
+    </p>
+</section>
+<footer class="site-footer">
         <span>&copy; 2026 neiki</span><span class="divider">|</span><span>neikiri@neikiri.cz</span>
     </footer>
 
@@ -121,3 +263,5 @@
     <script src="js/app.js"></script>
 </body>
 </html>
+
+

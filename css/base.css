@@ -38,6 +38,44 @@ body {
             padding: 14px 20px;
         }
 
+
+.about-bash p {
+            max-width: 900px;
+            margin: 0 auto 12px;
+            color: #34495e;
+            line-height: 1.7;
+            text-align: center;
+        }
+
+.about-bash ul,
+.about-bash ol {
+            max-width: 900px;
+            margin: 0 auto 14px;
+            padding-left: 22px;
+            text-align: left;
+            color: #34495e;
+        }
+
+.about-bash li {
+            margin-bottom: 8px;
+            line-height: 1.6;
+        }
+
+.about-bash pre {
+            max-width: 900px;
+            margin: 10px auto 8px;
+            padding: 10px 12px;
+            border: 1px solid #dfe6ee;
+            border-radius: 8px;
+            background: #f8fafc;
+            text-align: left;
+            overflow-x: auto;
+        }
+
+.about-bash code {
+            font-family: 'Courier New', monospace;
+            font-size: 0.95em;
+        }
 .about-bash h2 {
             text-align: center;
         }
@@ -54,4 +92,5 @@ body {
             margin: 0 8px;
             color: #7f8c8d;
         }
+
 
