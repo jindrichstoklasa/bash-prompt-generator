@@ -189,6 +189,10 @@
             updatePreview();
         }
 
+        // Escape content that would break the surrounding PS1="..." assignment
+        function escapePromptContent(code) {
+            return String(code).replace(/"/g, '\\"');
+        }
         // Update Preview
         function updatePreview() {
             const preview = document.getElementById('preview');
@@ -240,7 +244,7 @@
                 let styledPreview = `<span style="${styles}">${previewValue}</span>`;
 
                 previewHtml += styledPreview;
-                promptCode += elem.code;
+                promptCode += escapePromptContent(elem.code);
             });
 
             if (elements.length > 0) {
@@ -258,4 +262,5 @@
             // Placeholder for color mode switching
             console.log(`Switching ${type} to ${mode} mode`);
         }
+
 

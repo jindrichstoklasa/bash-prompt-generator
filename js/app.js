@@ -16,7 +16,7 @@
                 navigator.clipboard.writeText(code).then(() => {
                     const btn = document.getElementById('copyBtn');
                     btn.classList.add('copied');
-                    btn.textContent = 'âś“ Copied!';
+                    btn.textContent = 'Copied!';
                     setTimeout(() => {
                         btn.classList.remove('copied');
                         btn.innerHTML = '<i class="fas fa-copy"></i> Copy to Clipboard';
@@ -71,5 +71,6 @@
             init();
             initMobileResponsiveness();
         });
+
 
 
