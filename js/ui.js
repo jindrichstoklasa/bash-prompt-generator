@@ -15,7 +15,7 @@
             panel.innerHTML = '';
 
             for (const [category, items] of Object.entries(ELEMENT_CATEGORIES)) {
-                if (category === 'Formatting') continue;
+                if (category === 'Formatting' || category === 'Icons / Symbols') continue;
                 const categoryDiv = document.createElement('div');
                 categoryDiv.className = 'category';
 
@@ -337,5 +337,6 @@
                 }
             }
         }
+
 
 

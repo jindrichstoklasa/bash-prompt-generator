@@ -189,9 +189,9 @@
             updatePreview();
         }
 
-        // Escape content that would break the surrounding PS1="..." assignment
+        // Escape content for a single-quoted PS1 assignment
         function escapePromptContent(code) {
-            return String(code).replace(/"/g, '\\"');
+            return String(code).replace(/'/g, "'\\''");
         }
         // Update Preview
         function updatePreview() {
@@ -199,7 +199,7 @@
             const codeOutput = document.getElementById('codeOutput');
 
             let previewHtml = '';
-            let promptCode = 'PS1="';
+            let promptCode = "PS1='";
 
             elements.forEach(elem => {
                 // Generate preview text with actual values (use templateId for type)
@@ -258,9 +258,9 @@
             });
 
             if (elements.length > 0) {
-                promptCode += '"';
+                promptCode += "'";
             } else {
-                promptCode = 'PS1=""';
+                promptCode = "PS1=''";
             }
 
             // Add cursor to preview
