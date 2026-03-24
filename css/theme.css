@@ -1,0 +1,450 @@
+/* ===================================
+   Theme Slider Switch
+   =================================== */
+
+header {
+    position: relative;
+}
+
+.theme-switch {
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 56px;
+    height: 28px;
+    background: #252639;
+    border-radius: 50px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 7px;
+    z-index: 10;
+    border: 2px solid #3a3b52;
+    transition: background 0.3s ease, border-color 0.3s ease;
+    user-select: none;
+}
+
+.theme-switch i {
+    font-size: 0.7rem;
+    z-index: 2;
+    transition: color 0.3s ease;
+    line-height: 1;
+}
+
+.theme-switch .fa-moon {
+    color: #e2e8f0;
+}
+
+.theme-switch .fa-sun {
+    color: #94a3b8;
+}
+
+.theme-switch-thumb {
+    position: absolute;
+    left: 3px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    background: #4ade80;
+    border-radius: 50%;
+    transition: left 0.3s ease, background 0.3s ease;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.3);
+}
+
+/* Light mode slider */
+html:not(.dark) .theme-switch {
+    background: #e2e8f0;
+    border-color: #bdc3c7;
+}
+
+html:not(.dark) .theme-switch .fa-moon {
+    color: #bdc3c7;
+}
+
+html:not(.dark) .theme-switch .fa-sun {
+    color: #f59e0b;
+}
+
+html:not(.dark) .theme-switch-thumb {
+    left: calc(100% - 23px);
+    background: #f59e0b;
+}
+
+/* ===================================
+   Dark Theme Overrides
+   =================================== */
+
+/* Body */
+.dark body {
+    background: linear-gradient(135deg, #0f1117 0%, #1a1b2e 100%);
+}
+
+/* Header */
+.dark header {
+    background: linear-gradient(135deg, #0f1117 0%, #1a1b2e 100%);
+    color: #e2e8f0;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.4);
+}
+
+.dark header h1 {
+    color: #4ade80;
+}
+
+.dark header h2 {
+    color: #94a3b8;
+}
+
+/* Panels */
+.dark .left-panel,
+.dark .right-panel {
+    background: #1a1b2e;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.4);
+}
+
+.dark .left-panel h3,
+.dark .right-panel h3 {
+    color: #e2e8f0;
+    border-bottom-color: #4ade80;
+}
+
+.dark .left-panel::-webkit-scrollbar-thumb,
+.dark .right-panel::-webkit-scrollbar-thumb {
+    background: #3a3b52;
+}
+
+.dark .category-title {
+    color: #94a3b8;
+}
+
+/* Canvas */
+.dark .canvas {
+    background: #12131f;
+    border-color: #3a3b52;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.4);
+}
+
+.dark .canvas.drag-over {
+    background: #1a2035;
+    border-color: #4ade80;
+    box-shadow: 0 8px 24px rgba(74, 222, 128, 0.15);
+}
+
+.dark .canvas-empty {
+    color: #64748b;
+}
+
+.dark .canvas-hint {
+    color: #475569;
+}
+
+/* Preview & Code sections */
+.dark .preview-inline,
+.dark .code-inline {
+    background: #1a1b2e;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.4);
+}
+
+.dark .preview-inline h3,
+.dark .code-inline h3 {
+    color: #e2e8f0;
+    border-bottom-color: #4ade80;
+}
+
+.dark .code-output {
+    background: #0d0e18;
+    border-color: #2d2e42;
+    color: #e2e8f0;
+}
+
+/* Special Characters */
+.dark .special-chars-section {
+    background: #1a1b2e;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.4);
+}
+
+.dark .special-chars-title {
+    color: #e2e8f0;
+}
+
+.dark .char-btn {
+    background: #252639;
+    border-color: #3a3b52;
+    color: #e2e8f0;
+}
+
+.dark .char-btn:hover {
+    background: #2d2e42;
+    border-color: #4a4b62;
+}
+
+/* Element buttons (left panel) */
+.dark .element-btn {
+    background: #252639;
+    color: #e2e8f0;
+    border: 1px solid #3a3b52;
+}
+
+.dark .element-btn:hover {
+    box-shadow: 0 4px 12px rgba(74, 222, 128, 0.3);
+    border-color: #4ade80;
+}
+
+/* Element items on canvas */
+.dark .element-item {
+    background: #252639;
+    color: #e2e8f0;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+.dark .element-item:hover {
+    box-shadow: 0 6px 16px rgba(0,0,0,0.5);
+}
+
+.dark .element-item.selected {
+    background: #22c55e;
+    color: #0a0a0a;
+    box-shadow: 0 6px 20px rgba(74, 222, 128, 0.35);
+}
+
+.dark .element-item.selected .btn-icon {
+    background: rgba(0,0,0,0.2);
+    color: #0a0a0a;
+}
+
+.dark .element-item.selected .btn-icon:hover {
+    background: rgba(0,0,0,0.3);
+}
+
+/* Properties panel inputs */
+.dark .property-label {
+    color: #94a3b8;
+}
+
+.dark .color-input {
+    border-color: #3a3b52;
+    background: #252639;
+}
+
+.dark .color-value {
+    background: #252639;
+    border-color: #3a3b52;
+    color: #e2e8f0;
+}
+
+.dark .color-select {
+    background: #252639;
+    border-color: #3a3b52;
+    color: #e2e8f0;
+}
+
+.dark .attr-checkbox input[type="checkbox"] {
+    accent-color: #4ade80;
+}
+
+.dark .attr-checkbox label {
+    color: #e2e8f0;
+}
+
+.dark .no-selection {
+    color: #64748b;
+}
+
+/* Color mode tabs */
+.dark .color-mode-tabs button {
+    background: #252639;
+    border-color: #3a3b52;
+    color: #94a3b8;
+}
+
+.dark .color-mode-tabs button.active {
+    background: #4ade80;
+    color: #0f1117;
+    border-color: #4ade80;
+}
+
+.dark .color-swatch:hover {
+    border-color: #e2e8f0;
+}
+
+/* Color palette */
+.dark .color-palette {
+    border-color: #2d2e42;
+}
+
+/* Action Buttons */
+.dark .btn-primary {
+    background: linear-gradient(135deg, #4ade80 0%, #22c55e 100%);
+    color: #0f1117;
+}
+
+.dark .btn-primary:hover {
+    box-shadow: 0 4px 12px rgba(74, 222, 128, 0.4);
+}
+
+.dark .btn-secondary {
+    background: #3a3b52;
+    color: #e2e8f0;
+}
+
+.dark .btn-secondary:hover {
+    background: #4a4b62;
+}
+
+.dark .btn-danger {
+    background: #dc2626;
+    color: white;
+}
+
+.dark .btn-danger:hover {
+    background: #b91c1c;
+}
+
+.dark .copy-btn {
+    background: #4ade80;
+    color: #0f1117;
+}
+
+.dark .copy-btn:hover {
+    background: #22c55e;
+}
+
+.dark .copy-btn.copied {
+    background: #3b82f6;
+    color: white;
+}
+
+.dark .reset-btn {
+    background: #3a3b52;
+    color: #e2e8f0;
+}
+
+.dark .reset-btn:hover {
+    background: #4a4b62;
+}
+
+.dark .delete-btn {
+    background: #dc2626;
+}
+
+.dark .delete-btn:hover {
+    background: #b91c1c;
+}
+
+/* Panel toggle */
+.dark .panel-toggle {
+    background: #252639;
+    color: #e2e8f0;
+}
+
+.dark .panel-toggle:hover {
+    background: #2d2e42;
+}
+
+/* Mobile close button */
+.dark .mobile-close-btn {
+    background: #252639;
+    color: #e2e8f0;
+}
+
+/* Scrollbars */
+.dark ::-webkit-scrollbar-track {
+    background: #1a1b2e;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+    background: #3a3b52;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+    background: #4a4b62;
+}
+
+/* About sections */
+.dark .about-bash p {
+    color: #94a3b8;
+}
+
+.dark .about-bash h2 {
+    color: #e2e8f0;
+}
+
+.dark .about-bash ul,
+.dark .about-bash ol {
+    color: #94a3b8;
+}
+
+.dark .about-bash li {
+    color: #94a3b8;
+}
+
+.dark .about-bash pre {
+    background: #0d0e18;
+    border-color: #2d2e42;
+}
+
+.dark .about-bash code {
+    color: #4ade80;
+}
+
+/* Footer */
+.dark .site-footer {
+    color: #94a3b8;
+}
+
+.dark .site-footer .divider {
+    color: #4a4b62;
+}
+
+/* ===================================
+   Responsive overrides for slider
+   =================================== */
+
+@media (max-width: 768px) {
+    .theme-switch {
+        position: relative;
+        left: auto;
+        top: auto;
+        transform: none;
+        order: 3;
+        margin-top: 4px;
+        width: 50px;
+        height: 24px;
+    }
+
+    .theme-switch i {
+        font-size: 0.6rem;
+    }
+
+    .theme-switch-thumb {
+        width: 18px;
+        height: 18px;
+    }
+
+    html:not(.dark) .theme-switch-thumb {
+        left: calc(100% - 21px);
+    }
+}
+
+@media (max-width: 480px) {
+    .theme-switch {
+        width: 46px;
+        height: 22px;
+        padding: 0 6px;
+    }
+
+    .theme-switch i {
+        font-size: 0.55rem;
+    }
+
+    .theme-switch-thumb {
+        width: 16px;
+        height: 16px;
+    }
+
+    html:not(.dark) .theme-switch-thumb {
+        left: calc(100% - 19px);
+    }
+}

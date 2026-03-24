@@ -28,6 +28,11 @@
     <link rel="stylesheet" href="css/components.css">
     <link rel="stylesheet" href="css/panels.css">
     <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/theme.css">
+
+    <script>
+    (function(){if(localStorage.getItem('theme')!=='light')document.documentElement.classList.add('dark')})();
+    </script>
 
     <script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
     <!-- Matomo -->
@@ -65,6 +70,11 @@
 <body>
     <div class="container">
         <header>
+            <div class="theme-switch" id="themeSwitch" onclick="toggleTheme()" role="switch" aria-label="Toggle dark/light theme">
+                <i class="fas fa-moon"></i>
+                <i class="fas fa-sun"></i>
+                <span class="theme-switch-thumb"></span>
+            </div>
             <h1>Bash Prompt Generator</h1>
             <h2>Create custom PS1 prompts with an interactive builder</h2>
         </header>

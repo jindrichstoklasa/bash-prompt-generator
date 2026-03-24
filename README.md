@@ -7,7 +7,7 @@ An interactive **Bash PS1 prompt generator** and **Linux prompt builder**. Creat
 
 **Keywords:** bash prompt generator · PS1 generator · custom bash prompt · terminal prompt builder · Linux prompt
 
-![Bash Prompt Generator - interactive PS1 builder with drag-and-drop canvas and live preview](screenshot.png)
+![Bash Prompt Generator - interactive PS1 builder with drag-and-drop canvas and live preview](assets/screenshot.png)
 
 **Live version:** [https://neiki.eu/bash-prompt-generator/](https://neiki.eu/bash-prompt-generator/)
 

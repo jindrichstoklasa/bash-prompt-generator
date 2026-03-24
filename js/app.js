@@ -1,5 +1,28 @@
-﻿// Initialize App
+﻿// Theme Toggle
+        function toggleTheme() {
+            const html = document.documentElement;
+            const isDark = html.classList.contains('dark');
+            if (isDark) {
+                html.classList.remove('dark');
+                localStorage.setItem('theme', 'light');
+            } else {
+                html.classList.add('dark');
+                localStorage.setItem('theme', 'dark');
+            }
+            updateThemeToggle();
+        }
+
+        function updateThemeToggle() {
+            const sw = document.getElementById('themeSwitch');
+            if (!sw) return;
+            const isDark = document.documentElement.classList.contains('dark');
+            sw.title = isDark ? 'Switch to light theme' : 'Switch to dark theme';
+            sw.setAttribute('aria-checked', isDark ? 'false' : 'true');
+        }
+
+// Initialize App
         function init() {
+            updateThemeToggle();
             renderElementsPanel();
             renderSpecialChars();
             renderCanvas();
